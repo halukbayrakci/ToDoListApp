@@ -35,10 +35,18 @@ final class NoteViewController: UIViewController {
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        if let note = noteTextView.text {
-            viewModel.save(note: note)
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
+        let formattedDate = dateFormatter.string(from: date)
+        
+        guard noteTextView.text.isEmpty == false else { return }
+        
+        if let note = noteTextView.text  {
+            viewModel.save(note: note, creationDate: formattedDate)
         }
     }
+    
     
 }
 

@@ -14,6 +14,7 @@ final class ToDoMainViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var notesList = [ToDo]()
+    
     var viewModel = ToDoMainViewModelViewController()
    
     var selectedItems = Set<Int>()
@@ -31,9 +32,11 @@ final class ToDoMainViewController: UIViewController {
         tableViewUpdate()
         searchBarUpdate()
         addButtonUpdate()
+        loadSelections()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.noteUpload()
         toDoMainTableView.reloadData()
     }
@@ -57,14 +60,25 @@ final class ToDoMainViewController: UIViewController {
     private func tableViewUpdate() {
         toDoMainTableView.backgroundColor = UIColor(named: "mainColor")
         toDoMainTableView.separatorColor = UIColor(named: "mainColor")
-        
     }
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
-        
+    private func saveSelections() {
+        UserDefaults.standard.set(Array(selectedItems), forKey: "selectedItems")
+    }
+    
+    private func loadSelections() {
+        if let savedSelections = UserDefaults.standard.array(forKey: "selectedItems") as? [Int] {
+            selectedItems = Set(savedSelections)
+        }
+    }
+ 
+    @IBAction func unwindToToDoMainViewController(unwindSegue: UIStoryboardSegue) {
+        viewModel.noteUpload()
+        toDoMainTableView.reloadData()
     }
     
 }
+
 
 extension ToDoMainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -81,11 +95,6 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        let formattedDate = dateFormatter.string(from: date)
-        
         let noteList = notesList[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ToDoMainTableViewCell else { fatalError()}
@@ -95,7 +104,7 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.toDoTitleLabel.text = noteList.note
         cell.toDoTitleLabel.textColor = .white
-        cell.toDoSubtitleLabel.text = formattedDate
+        cell.toDoSubtitleLabel.text = noteList.creationDate
         cell.toDoSubtitleLabel.textColor = .white
         
         cell.backgroundColor = UIColor(named: "mainColor")
@@ -106,29 +115,10 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.accessoryType = .none
         }
-
+        
+        saveSelections()
+        
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let noteList = notesList[indexPath.row].note
-        let textLength = noteList.count
-        
-        switch textLength {
-        case 0..<20:
-            return 100
-        case 20..<30:
-            return 120
-        case 30..<75:
-            return 150
-        case 75..<90:
-            return 170
-        case 90..<150:
-            return 200
-        default:
-            return 300
-        }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -162,6 +152,7 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UISwipeActionsConfiguration(actions: [deleteSwipeAction])
     }
+    
     
 }
 

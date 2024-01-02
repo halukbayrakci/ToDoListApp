@@ -9,21 +9,56 @@
 /* Begin PBXBuildFile section */
 		816C568A2B3CA4D40086D6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56892B3CA4D40086D6AF /* AppDelegate.swift */; };
 		816C568C2B3CA4D40086D6AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C568B2B3CA4D40086D6AF /* SceneDelegate.swift */; };
-		816C568E2B3CA4D40086D6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C568D2B3CA4D40086D6AF /* ViewController.swift */; };
+		816C568E2B3CA4D40086D6AF /* ToDoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C568D2B3CA4D40086D6AF /* ToDoMainViewController.swift */; };
 		816C56912B3CA4D40086D6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816C568F2B3CA4D40086D6AF /* Main.storyboard */; };
 		816C56932B3CA4D60086D6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816C56922B3CA4D60086D6AF /* Assets.xcassets */; };
 		816C56962B3CA4D60086D6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816C56942B3CA4D60086D6AF /* LaunchScreen.storyboard */; };
+		816C569E2B3CB7260086D6AF /* ToDoMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C569D2B3CB7260086D6AF /* ToDoMainTableViewCell.swift */; };
+		816C56A02B3DFFBD0086D6AF /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C569F2B3DFFBD0086D6AF /* NoteViewController.swift */; };
+		816C56A22B3E0DB80086D6AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56A12B3E0DB80086D6AF /* Extensions.swift */; };
+		816C56A52B3EA9DE0086D6AF /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 816C56A42B3EA9DE0086D6AF /* IQKeyboardManagerSwift */; };
+		816C56BE2B3EAFBC0086D6AF /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56BD2B3EAFBC0086D6AF /* ToDo.swift */; };
+		816C56C12B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56C02B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift */; };
+		816C56D92B3EEA740086D6AF /* ToDoMainViewModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56D82B3EEA740086D6AF /* ToDoMainViewModelViewController.swift */; };
+		816C56DB2B3EEEF40086D6AF /* NoteViewModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56DA2B3EEEF40086D6AF /* NoteViewModelViewController.swift */; };
+		816C56DE2B3EF0C60086D6AF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 816C56DD2B3EF0C60086D6AF /* RxSwift */; };
+		816C56FF2B43422B0086D6AF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C56F42B43422B0086D6AF /* FMDatabasePool.m */; };
+		816C57002B43422B0086D6AF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C56F92B43422B0086D6AF /* FMResultSet.m */; };
+		816C57012B43422B0086D6AF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C56FB2B43422B0086D6AF /* FMDatabase.m */; };
+		816C57022B43422B0086D6AF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C56FC2B43422B0086D6AF /* FMDatabaseAdditions.m */; };
+		816C57032B43422B0086D6AF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C56FD2B43422B0086D6AF /* FMDatabaseQueue.m */; };
+		816C57062B4342E90086D6AF /* toDo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 816C57052B4342E90086D6AF /* toDo.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		816C56862B3CA4D40086D6AF /* toDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		816C56892B3CA4D40086D6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816C568B2B3CA4D40086D6AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		816C568D2B3CA4D40086D6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		816C568D2B3CA4D40086D6AF /* ToDoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMainViewController.swift; sourceTree = "<group>"; };
 		816C56902B3CA4D40086D6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		816C56922B3CA4D60086D6AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816C56952B3CA4D60086D6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816C56972B3CA4D60086D6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816C569D2B3CB7260086D6AF /* ToDoMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMainTableViewCell.swift; sourceTree = "<group>"; };
+		816C569F2B3DFFBD0086D6AF /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		816C56A12B3E0DB80086D6AF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		816C56BD2B3EAFBC0086D6AF /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		816C56C02B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoNotesDaoRepository.swift; sourceTree = "<group>"; };
+		816C56D82B3EEA740086D6AF /* ToDoMainViewModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMainViewModelViewController.swift; sourceTree = "<group>"; };
+		816C56DA2B3EEEF40086D6AF /* NoteViewModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModelViewController.swift; sourceTree = "<group>"; };
+		816C56F42B43422B0086D6AF /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		816C56F52B43422B0086D6AF /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		816C56F62B43422B0086D6AF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		816C56F72B43422B0086D6AF /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		816C56F82B43422B0086D6AF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		816C56F92B43422B0086D6AF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		816C56FA2B43422B0086D6AF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		816C56FB2B43422B0086D6AF /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		816C56FC2B43422B0086D6AF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		816C56FD2B43422B0086D6AF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		816C56FE2B43422B0086D6AF /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		816C57042B4342720086D6AF /* toDoListApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "toDoListApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		816C57052B4342E90086D6AF /* toDo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = toDo.sqlite; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816C56DE2B3EF0C60086D6AF /* RxSwift in Frameworks */,
+				816C56A52B3EA9DE0086D6AF /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +79,7 @@
 			children = (
 				816C56882B3CA4D40086D6AF /* toDoListApp */,
 				816C56872B3CA4D40086D6AF /* Products */,
+				816C56DC2B3EF0C60086D6AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +96,96 @@
 			children = (
 				816C56892B3CA4D40086D6AF /* AppDelegate.swift */,
 				816C568B2B3CA4D40086D6AF /* SceneDelegate.swift */,
-				816C568D2B3CA4D40086D6AF /* ViewController.swift */,
+				816C56A92B3EACCD0086D6AF /* Extensions */,
+				816C56A62B3EAC6E0086D6AF /* Model */,
+				816C56A72B3EAC7B0086D6AF /* UI */,
 				816C568F2B3CA4D40086D6AF /* Main.storyboard */,
 				816C56922B3CA4D60086D6AF /* Assets.xcassets */,
 				816C56942B3CA4D60086D6AF /* LaunchScreen.storyboard */,
 				816C56972B3CA4D60086D6AF /* Info.plist */,
+				816C56F62B43422B0086D6AF /* FMDatabase.h */,
+				816C56FB2B43422B0086D6AF /* FMDatabase.m */,
+				816C56FA2B43422B0086D6AF /* FMDatabaseAdditions.h */,
+				816C56FC2B43422B0086D6AF /* FMDatabaseAdditions.m */,
+				816C56F52B43422B0086D6AF /* FMDatabasePool.h */,
+				816C56F42B43422B0086D6AF /* FMDatabasePool.m */,
+				816C56FE2B43422B0086D6AF /* FMDatabaseQueue.h */,
+				816C56FD2B43422B0086D6AF /* FMDatabaseQueue.m */,
+				816C56F72B43422B0086D6AF /* FMDB.h */,
+				816C56F82B43422B0086D6AF /* FMResultSet.h */,
+				816C56F92B43422B0086D6AF /* FMResultSet.m */,
+				816C57042B4342720086D6AF /* toDoListApp-Bridging-Header.h */,
+				816C57052B4342E90086D6AF /* toDo.sqlite */,
 			);
 			path = toDoListApp;
+			sourceTree = "<group>";
+		};
+		816C56A62B3EAC6E0086D6AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				816C56BD2B3EAFBC0086D6AF /* ToDo.swift */,
+				816C56BF2B3EB08F0086D6AF /* repo */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		816C56A72B3EAC7B0086D6AF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				816C56C22B3EB1930086D6AF /* ViewModel */,
+				816C56DF2B4297C30086D6AF /* views */,
+				816C56A82B3EAC870086D6AF /* TableViewCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		816C56A82B3EAC870086D6AF /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				816C569D2B3CB7260086D6AF /* ToDoMainTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		816C56A92B3EACCD0086D6AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				816C56A12B3E0DB80086D6AF /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		816C56BF2B3EB08F0086D6AF /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				816C56C02B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		816C56C22B3EB1930086D6AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				816C56D82B3EEA740086D6AF /* ToDoMainViewModelViewController.swift */,
+				816C56DA2B3EEEF40086D6AF /* NoteViewModelViewController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		816C56DC2B3EF0C60086D6AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		816C56DF2B4297C30086D6AF /* views */ = {
+			isa = PBXGroup;
+			children = (
+				816C568D2B3CA4D40086D6AF /* ToDoMainViewController.swift */,
+				816C569F2B3DFFBD0086D6AF /* NoteViewController.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +204,10 @@
 			dependencies = (
 			);
 			name = toDoListApp;
+			packageProductDependencies = (
+				816C56A42B3EA9DE0086D6AF /* IQKeyboardManagerSwift */,
+				816C56DD2B3EF0C60086D6AF /* RxSwift */,
+			);
 			productName = toDoListApp;
 			productReference = 816C56862B3CA4D40086D6AF /* toDoListApp.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +224,7 @@
 				TargetAttributes = {
 					816C56852B3CA4D40086D6AF = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -111,6 +237,10 @@
 				Base,
 			);
 			mainGroup = 816C567D2B3CA4D40086D6AF;
+			packageReferences = (
+				816C56A32B3EA9DE0086D6AF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				816C56C32B3EE9A00086D6AF /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 816C56872B3CA4D40086D6AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				816C56962B3CA4D60086D6AF /* LaunchScreen.storyboard in Resources */,
+				816C57062B4342E90086D6AF /* toDo.sqlite in Resources */,
 				816C56932B3CA4D60086D6AF /* Assets.xcassets in Resources */,
 				816C56912B3CA4D40086D6AF /* Main.storyboard in Resources */,
 			);
@@ -138,9 +269,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				816C568E2B3CA4D40086D6AF /* ViewController.swift in Sources */,
+				816C56C12B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift in Sources */,
+				816C569E2B3CB7260086D6AF /* ToDoMainTableViewCell.swift in Sources */,
+				816C57012B43422B0086D6AF /* FMDatabase.m in Sources */,
+				816C56A22B3E0DB80086D6AF /* Extensions.swift in Sources */,
+				816C56BE2B3EAFBC0086D6AF /* ToDo.swift in Sources */,
+				816C57032B43422B0086D6AF /* FMDatabaseQueue.m in Sources */,
+				816C57022B43422B0086D6AF /* FMDatabaseAdditions.m in Sources */,
+				816C568E2B3CA4D40086D6AF /* ToDoMainViewController.swift in Sources */,
+				816C56FF2B43422B0086D6AF /* FMDatabasePool.m in Sources */,
+				816C57002B43422B0086D6AF /* FMResultSet.m in Sources */,
 				816C568A2B3CA4D40086D6AF /* AppDelegate.swift in Sources */,
+				816C56A02B3DFFBD0086D6AF /* NoteViewController.swift in Sources */,
+				816C56D92B3EEA740086D6AF /* ToDoMainViewModelViewController.swift in Sources */,
 				816C568C2B3CA4D40086D6AF /* SceneDelegate.swift in Sources */,
+				816C56DB2B3EEEF40086D6AF /* NoteViewModelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +433,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57F5WN9JCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = toDoListApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quick Notes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -308,6 +454,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.halukbayrakci.toDoListApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "toDoListApp/toDoListApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,11 +466,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57F5WN9JCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = toDoListApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quick Notes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -336,6 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.halukbayrakci.toDoListApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "toDoListApp/toDoListApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +515,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		816C56A32B3EA9DE0086D6AF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.16;
+			};
+		};
+		816C56C32B3EE9A00086D6AF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		816C56A42B3EA9DE0086D6AF /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 816C56A32B3EA9DE0086D6AF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		816C56DD2B3EF0C60086D6AF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 816C56C32B3EE9A00086D6AF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 816C567E2B3CA4D40086D6AF /* Project object */;
 }

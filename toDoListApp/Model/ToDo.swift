@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct ToDo {
+    var id: Int
+    var note: String
+    var creationDate: String
+    
+}
