@@ -14,9 +14,7 @@ final class ToDoMainViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var notesList = [ToDo]()
-    
     var viewModel = ToDoMainViewModelViewController()
-   
     var selectedItems = Set<Int>()
     
     override func viewDidLoad() {
@@ -24,11 +22,13 @@ final class ToDoMainViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(named: "mainColor")
         
-        _ = viewModel.notesList.subscribe(onNext: { list in
-            self.notesList = list
-            self.toDoMainTableView.reloadData()
+        _ = viewModel.notesList.subscribe(onNext: { [weak self] list in
+            DispatchQueue.main.async {
+                self?.notesList = list
+                self?.toDoMainTableView.reloadData()
+            }
         })
-     
+        
         tableViewUpdate()
         searchBarUpdate()
         addButtonUpdate()
@@ -38,7 +38,9 @@ final class ToDoMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.noteUpload()
-        toDoMainTableView.reloadData()
+        DispatchQueue.main.async {
+            self.toDoMainTableView.reloadData()
+        }
     }
     
     private func addButtonUpdate() {
@@ -71,22 +73,34 @@ final class ToDoMainViewController: UIViewController {
             selectedItems = Set(savedSelections)
         }
     }
- 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toUpdate" {
+            if let note = sender as? ToDo {
+                let destinationVC = segue.destination as! NoteUpdateViewController
+                destinationVC.notes = note
+            }
+        }
+    }
+    
     @IBAction func unwindToToDoMainViewController(unwindSegue: UIStoryboardSegue) {
         viewModel.noteUpload()
-        toDoMainTableView.reloadData()
+        DispatchQueue.main.async {
+            self.toDoMainTableView.reloadData()
+        }
     }
+    
     
 }
 
-
+//MARK: - UISearchBarDelegate
 extension ToDoMainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.search(searchWord: searchText)
     }
 }
 
-
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,13 +122,7 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.toDoSubtitleLabel.textColor = .white
         
         cell.backgroundColor = UIColor(named: "mainColor")
-        
-        // Seçilen öğenin indeksi seçilenItems set'inde ise checkmark aksesuarını göster
-        if selectedItems.contains(indexPath.row) {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+        cell.accessoryType = selectedItems.contains(indexPath.row) ? .checkmark : .none
         
         saveSelections()
         
@@ -123,6 +131,7 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let noteList = notesList[indexPath.row]
         
         if selectedItems.contains(indexPath.row) {
             selectedItems.remove(indexPath.row)
@@ -130,27 +139,38 @@ extension ToDoMainViewController: UITableViewDelegate, UITableViewDataSource {
             selectedItems.insert(indexPath.row)
         }
         
-        
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteSwipeAction = UIContextualAction(style: .destructive, title: "DELETE") {_,_,_ in 
-            let note = self.notesList[indexPath.row]
-            
-            let alert = UIAlertController(title: "Warning !", message: "\(note.note) delete ? ", preferredStyle: .alert)
+        let note = self.notesList[indexPath.row]
+        
+        let deleteSwipeAction = UIContextualAction(style: .destructive, title: "DELETE") {_,_,_ in
+
+            let alert = UIAlertController(title: "Warning !", message: "\(note.note!) delete ? ", preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(cancelAction)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-                self.viewModel.delete(id: note.id)
+                self.viewModel.delete(id: note.id!)
             }
             alert.addAction(deleteAction)
             
             self.present(alert, animated: true)
         }
         return UISwipeActionsConfiguration(actions: [deleteSwipeAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let note = self.notesList[indexPath.row]
+        
+        let editSwipeAction = UIContextualAction(style: .normal, title: "EDIT") { _, _, _ in
+            
+            self.performSegue(withIdentifier: "toUpdate", sender: note)
+        }
+        editSwipeAction.backgroundColor = .lightGray
+        return UISwipeActionsConfiguration(actions: [editSwipeAction])
     }
     
     

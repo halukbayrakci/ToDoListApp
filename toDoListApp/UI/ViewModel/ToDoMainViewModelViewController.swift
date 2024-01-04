@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 final class ToDoMainViewModelViewController {
+    
     var repo = ToDoNotesDaoRepository()
     var notesList = BehaviorSubject<[ToDo]>(value: [ToDo]())
     
@@ -17,7 +18,7 @@ final class ToDoMainViewModelViewController {
         notesList = repo.notesList
         noteUpload()
     }
-    
+
     func delete(id:Int){
         repo.delete(id: id)
     }

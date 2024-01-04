@@ -102,7 +102,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="n1V-Md-xYI" kind="presentation" id="Zh0-6m-78C"/>
+                                    <segue destination="n1V-Md-xYI" kind="presentation" modalPresentationStyle="fullScreen" id="Zh0-6m-78C"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -125,9 +125,11 @@
                         <outlet property="addButton" destination="QmK-gL-Upk" id="Tf9-5b-aYG"/>
                         <outlet property="toDoMainTableView" destination="hoP-Jp-iaa" id="yzs-db-C6G"/>
                         <outlet property="toDoSearchBar" destination="G8k-YE-cil" id="cvB-j2-8Ze"/>
+                        <segue destination="EMD-Gt-OVT" kind="presentation" identifier="toUpdate" modalPresentationStyle="fullScreen" id="433-8Y-RBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="uxh-CJ-Wwg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="-27.455357142857142"/>
         </scene>
@@ -136,7 +138,7 @@
             <objects>
                 <viewController id="n1V-Md-xYI" customClass="NoteViewController" customModule="toDoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSk-J2-CJL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutManager="textKit2" translatesAutoresizingMaskIntoConstraints="NO" id="azl-IV-oWW">
@@ -152,7 +154,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-B0-CJK">
-                                <rect key="frame" x="304" y="786" width="80" height="80"/>
+                                <rect key="frame" x="304" y="796" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="sId-hp-7RE"/>
                                     <constraint firstAttribute="width" constant="80" id="zXN-be-i53"/>
@@ -196,7 +198,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iu-pu-twx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Hal-3o-FJc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-27"/>
+            <point key="canvasLocation" x="1874" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2tx-YI-nXQ">
@@ -225,13 +227,79 @@
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="-27.455357142857142"/>
         </scene>
+        <!--Note-->
+        <scene sceneID="28a-RN-0Ts">
+            <objects>
+                <viewController id="EMD-Gt-OVT" customClass="NoteUpdateViewController" customModule="toDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cqe-kC-o9y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutManager="textKit2" translatesAutoresizingMaskIntoConstraints="NO" id="7HB-za-jfT">
+                                <rect key="frame" x="20" y="150" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="F1K-X6-xI7"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lx-fT-dVH">
+                                <rect key="frame" x="304" y="796" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TNF-3R-u8H"/>
+                                    <constraint firstAttribute="width" constant="80" id="ipC-4z-67c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="✔">
+                                    <color key="titleColor" name="grayColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateButtonPressed:" destination="EMD-Gt-OVT" eventType="touchUpInside" id="MCm-aD-DfU"/>
+                                    <segue destination="uxh-CJ-Wwg" kind="unwind" unwindAction="unwindToToDoMainViewControllerWithUnwindSegue:" id="Ph3-wz-ubv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He2-2t-aqd">
+                                <rect key="frame" x="20" y="68" width="200" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <color key="textColor" name="mainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Lr-ZX-GMQ"/>
+                        <color key="backgroundColor" name="grayColor"/>
+                        <constraints>
+                            <constraint firstItem="He2-2t-aqd" firstAttribute="leading" secondItem="7Lr-ZX-GMQ" secondAttribute="leading" constant="20" id="7pu-SW-caK"/>
+                            <constraint firstItem="7HB-za-jfT" firstAttribute="top" secondItem="He2-2t-aqd" secondAttribute="bottom" constant="40" id="Aq7-Va-CGn"/>
+                            <constraint firstItem="7HB-za-jfT" firstAttribute="leading" secondItem="7Lr-ZX-GMQ" secondAttribute="leading" constant="20" id="Ima-sT-e9v"/>
+                            <constraint firstItem="7Lr-ZX-GMQ" firstAttribute="trailing" secondItem="6lx-fT-dVH" secondAttribute="trailing" constant="30" id="L5P-YQ-rjN"/>
+                            <constraint firstItem="7Lr-ZX-GMQ" firstAttribute="trailing" secondItem="7HB-za-jfT" secondAttribute="trailing" constant="20" id="gma-0S-vcf"/>
+                            <constraint firstItem="7HB-za-jfT" firstAttribute="top" secondItem="7Lr-ZX-GMQ" secondAttribute="top" constant="150" id="q4S-Dq-9S0"/>
+                            <constraint firstItem="7Lr-ZX-GMQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="He2-2t-aqd" secondAttribute="trailing" symbolic="YES" id="ulM-Ey-8Y6"/>
+                            <constraint firstItem="6lx-fT-dVH" firstAttribute="bottom" secondItem="7Lr-ZX-GMQ" secondAttribute="bottom" constant="-20" id="wmz-H3-bE1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Note" id="Qy4-CZ-6zE"/>
+                    <connections>
+                        <outlet property="noteUpdateTextView" destination="7HB-za-jfT" id="l2C-5y-HPq"/>
+                        <outlet property="updateButton" destination="6lx-fT-dVH" id="fsg-us-ZtR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYJ-Yd-oFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-722"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="grayColor">
-            <color red="0.33725490200000002" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.33700001239776611" green="0.32899999618530273" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainColor">
-            <color red="0.94117647058823528" green="0.72156862745098038" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.72200000286102295" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

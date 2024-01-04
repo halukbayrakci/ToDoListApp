@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810801482B46C5C3004B57B6 /* NoteUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810801472B46C5C3004B57B6 /* NoteUpdateViewController.swift */; };
+		8108014A2B46C6FA004B57B6 /* NoteUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810801492B46C6FA004B57B6 /* NoteUpdateViewModel.swift */; };
 		816C568A2B3CA4D40086D6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C56892B3CA4D40086D6AF /* AppDelegate.swift */; };
 		816C568C2B3CA4D40086D6AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C568B2B3CA4D40086D6AF /* SceneDelegate.swift */; };
 		816C568E2B3CA4D40086D6AF /* ToDoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C568D2B3CA4D40086D6AF /* ToDoMainViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		810801472B46C5C3004B57B6 /* NoteUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteUpdateViewController.swift; sourceTree = "<group>"; };
+		810801492B46C6FA004B57B6 /* NoteUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteUpdateViewModel.swift; sourceTree = "<group>"; };
 		816C56862B3CA4D40086D6AF /* toDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		816C56892B3CA4D40086D6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816C568B2B3CA4D40086D6AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +138,6 @@
 			children = (
 				816C56C22B3EB1930086D6AF /* ViewModel */,
 				816C56DF2B4297C30086D6AF /* views */,
-				816C56A82B3EAC870086D6AF /* TableViewCell */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			children = (
 				816C56D82B3EEA740086D6AF /* ToDoMainViewModelViewController.swift */,
 				816C56DA2B3EEEF40086D6AF /* NoteViewModelViewController.swift */,
+				810801492B46C6FA004B57B6 /* NoteUpdateViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,6 +188,8 @@
 			children = (
 				816C568D2B3CA4D40086D6AF /* ToDoMainViewController.swift */,
 				816C569F2B3DFFBD0086D6AF /* NoteViewController.swift */,
+				810801472B46C5C3004B57B6 /* NoteUpdateViewController.swift */,
+				816C56A82B3EAC870086D6AF /* TableViewCell */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				816C56C12B3EB0BC0086D6AF /* ToDoNotesDaoRepository.swift in Sources */,
+				810801482B46C5C3004B57B6 /* NoteUpdateViewController.swift in Sources */,
 				816C569E2B3CB7260086D6AF /* ToDoMainTableViewCell.swift in Sources */,
 				816C57012B43422B0086D6AF /* FMDatabase.m in Sources */,
 				816C56A22B3E0DB80086D6AF /* Extensions.swift in Sources */,
@@ -279,6 +286,7 @@
 				816C568E2B3CA4D40086D6AF /* ToDoMainViewController.swift in Sources */,
 				816C56FF2B43422B0086D6AF /* FMDatabasePool.m in Sources */,
 				816C57002B43422B0086D6AF /* FMResultSet.m in Sources */,
+				8108014A2B46C6FA004B57B6 /* NoteUpdateViewModel.swift in Sources */,
 				816C568A2B3CA4D40086D6AF /* AppDelegate.swift in Sources */,
 				816C56A02B3DFFBD0086D6AF /* NoteViewController.swift in Sources */,
 				816C56D92B3EEA740086D6AF /* ToDoMainViewModelViewController.swift in Sources */,
