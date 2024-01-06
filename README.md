@@ -16,7 +16,7 @@ This application is a note taking application that saves notes using SQLite data
 
 <h2> Video Preview <img src="https://media.giphy.com/media/fqFBWvYNOV9TCfMNB2/giphy.gif" width="62"></h2>
 <p align="center">
-  <img src="https://github.com/halukbayrakci/ToDoListApp/assets/125749490/2c4bddad-31a3-4c34-9453-156bae8093d9" width="320" height="640">
+  <img src="https://github.com/halukbayrakci/ToDoListApp/assets/125749490/2c4bddad-31a3-4c34-9453-156bae8093d9" width="393" height="852">
 </p>
 
 <h2> Screenshots <img src="https://media2.giphy.com/media/psneItdLMpWy36ejfA/source.gif" width="62"></h2>
